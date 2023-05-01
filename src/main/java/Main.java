@@ -1,14 +1,8 @@
-import model.Carro;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import service.CarroService;
-
 public class Main {
     /**
      * Um carro tem os seguintes atributos:
      * - cor
-     * - marca
+     * - modelo
      * - ligado
      * - velocidadeAtual
      * - velocidadeMaxima
@@ -30,4 +24,7 @@ public class Main {
      * - O carro não pode passar de sua velocidade máxima
      */
 
+    public static void main(String[] args) {
+
+    }
 }

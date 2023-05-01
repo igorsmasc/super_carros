@@ -2,7 +2,7 @@ package model;
 
 public class Carro {
     private String cor;
-    private String marca;
+    private String modelo;
     private Boolean ligado;
     private Integer velocidadeAtual;
     private Integer velocidadeMaxima;
@@ -15,12 +15,12 @@ public class Carro {
         this.cor = cor;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getModelo() {
+        return modelo;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
     public Boolean getLigado() {
