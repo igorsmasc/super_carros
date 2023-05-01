@@ -7,6 +7,11 @@ public class Carro {
     private Integer velocidadeAtual;
     private Integer velocidadeMaxima;
 
+    public Carro() {
+        this.ligado = false;
+        this.velocidadeAtual = 0;
+    }
+
     public String getCor() {
         return cor;
     }

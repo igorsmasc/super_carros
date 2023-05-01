@@ -1,7 +1,5 @@
 import model.Carro;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+
 import service.CarroService;
 
 public class Main {
@@ -26,8 +24,53 @@ public class Main {
      * Regras:
      * - Só podemos desligar o carro quando ele parar (velocidadeAtual = 0)
      * - Não existe velocidade negativa
-     * - Um carro tem por padrão velocidade máx = 100
+     * - Um carro tem por padrão velocidade máx = 100km/h
      * - O carro não pode passar de sua velocidade máxima
      */
 
+    public static void main(String[] args) {
+        // Testes sem framework (Testando apenas com o Java)
+
+        // Gherkin
+        // Given (Dado) - When (Quando) - Then (Então)
+
+        // Global
+        CarroService carroService = new CarroService();
+
+        // Teste #1 - Deve ligar corretamente
+        // Given
+        Carro carro = new Carro();
+
+        // When
+        carroService.ligar(carro);
+
+        // Then
+        System.out.println(carro.getLigado());
+
+        // -------------------------------------------------
+
+        // Teste #2 - Deve desligar corretamente um carro ligado
+        // Given (Dado)
+        Carro carro2 = new Carro();
+        carroService.ligar(carro2);
+
+        // When
+        carroService.desligar(carro2);
+
+        // Then
+        System.out.println(carro2.getLigado() == false);
+
+        // -------------------------------------------------
+
+        // Teste #3 - Deve acelerar corretamente um carro ligado
+        // Given (Dado)
+        Carro carro3 = new Carro();
+        carroService.ligar(carro3);
+
+        // When
+        carroService.acelerar(carro3, 10);
+
+        // Then
+        System.out.println(carro3.getVelocidadeAtual() == 10);
+    }
 }

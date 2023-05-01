@@ -7,7 +7,7 @@ public class CarroService {
         carro.setLigado(true);
     }
 
-    public void desligar(Carro carro) throws Exception {
+    public void desligar(Carro carro) {
         carro.setLigado(false);
     }
 
