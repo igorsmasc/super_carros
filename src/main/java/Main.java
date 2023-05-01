@@ -1,5 +1,7 @@
 import model.Carro;
 
+import org.junit.Assert;
+import org.junit.Test;
 import service.CarroService;
 
 public class Main {
@@ -28,29 +30,27 @@ public class Main {
      * - O carro não pode passar de sua velocidade máxima
      */
 
-    public static void main(String[] args) {
-        // Testes sem framework (Testando apenas com o Java)
-
-        // Gherkin
-        // Given (Dado) - When (Quando) - Then (Então)
-
-        // Global
-        CarroService carroService = new CarroService();
+    @Test
+    public void deveLigarCorretamente() {
+        // Testes sem ASSERTIVAS PASSAM!
 
         // Teste #1 - Deve ligar corretamente
         // Given
+        CarroService carroService = new CarroService();
         Carro carro = new Carro();
 
         // When
         carroService.ligar(carro);
 
         // Then
-        System.out.println(carro.getLigado());
+        Assert.assertTrue(carro.getLigado());
+    }
 
-        // -------------------------------------------------
-
+    @Test
+    public void deveDesligarCorretamenteUmCarroLigado() {
         // Teste #2 - Deve desligar corretamente um carro ligado
         // Given (Dado)
+        CarroService carroService = new CarroService();
         Carro carro2 = new Carro();
         carroService.ligar(carro2);
 
@@ -58,12 +58,14 @@ public class Main {
         carroService.desligar(carro2);
 
         // Then
-        System.out.println(carro2.getLigado() == false);
+        Assert.assertFalse(carro2.getLigado());
+    }
 
-        // -------------------------------------------------
-
+    @Test
+    public void deveAcelerarCorretamenteUmCarroLigado() {
         // Teste #3 - Deve acelerar corretamente um carro ligado
         // Given (Dado)
+        CarroService carroService = new CarroService();
         Carro carro3 = new Carro();
         carroService.ligar(carro3);
 
@@ -71,6 +73,6 @@ public class Main {
         carroService.acelerar(carro3, 10);
 
         // Then
-        System.out.println(carro3.getVelocidadeAtual() == 10);
+        Assert.assertTrue(carro3.getVelocidadeAtual() == 10);
     }
 }
