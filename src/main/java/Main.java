@@ -8,7 +8,7 @@ public class Main {
     /**
      * Um carro tem os seguintes atributos:
      * - cor
-     * - marca
+     * - modelo
      * - ligado
      * - velocidadeAtual
      * - velocidadeMaxima
