@@ -1,8 +1,10 @@
 package model;
 
+import java.util.Objects;
+
 public class Carro {
     private String cor;
-    private String marca;
+    private String modelo;
     private Boolean ligado;
     private Integer velocidadeAtual;
     private Integer velocidadeMaxima;
@@ -20,12 +22,12 @@ public class Carro {
         this.cor = cor;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getModelo() {
+        return modelo;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
     public Boolean getLigado() {
@@ -50,5 +52,18 @@ public class Carro {
 
     public void setVelocidadeMaxima(Integer velocidadeMaxima) {
         this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Carro)) return false;
+        Carro carro = (Carro) o;
+        return modelo.equals(carro.modelo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(modelo);
     }
 }
