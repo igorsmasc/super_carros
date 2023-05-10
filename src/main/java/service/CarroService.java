@@ -18,4 +18,23 @@ public class CarroService {
     public void frear(Carro carro, int velocidade) {
         carro.setVelocidadeAtual(carro.getVelocidadeAtual()-velocidade);
     }
+
+    // Modificadores de acesso - public, protected, default, private
+
+    public void publicTest() {
+        // todos conseguem acessar
+    }
+
+    protected void protectedTest() {
+        // própria classe, MESMO PACOTE e subclasses
+    }
+
+    void defaultTest() {
+        // própria classe e MESMO PACOTE
+    }
+
+    private void privateTest() {
+        // apenas a própria classe
+    }
+
 }
