@@ -96,4 +96,24 @@ public class PrimeirosPassos {
 
         Assert.assertNotSame(carro01, carro02);
     }
+
+    @Test
+    public void praticandoOrdemParametros() {
+        int resultado = somar(2, 5);
+        int resultadoEsperado = 7;
+
+        Assert.assertEquals(resultadoEsperado, resultado); // -> 1 - Esperado | 2 - Atual
+    }
+
+    @Test
+    public void praticandoOrdemParametros_Not() {
+        int resultadoNaoEsperado = 5;
+        int resultado = somar(2, 2);
+
+        Assert.assertNotEquals(resultadoNaoEsperado, resultado);
+    }
+
+    private int somar(int a, int b) {
+        return a + b;
+    }
 }
