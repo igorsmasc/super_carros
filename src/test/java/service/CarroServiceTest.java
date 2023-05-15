@@ -5,12 +5,41 @@ import org.junit.*;
 
 public class CarroServiceTest {
 
+    private static CarroService carroService;
+
+    // Before, BeforeClass
+
+    @Before // Antes de cada teste
+    public void before() {
+        System.out.println("Before");
+    }
+
+    @BeforeClass // Antes da classe ser instanciada
+    public static void beforeClass() {
+
+        carroService = new CarroService();
+        System.out.println("Before Class");
+    }
+
+    // After, AfterClass
+
+    @After // Após cada teste
+    public void after() {
+        // limpar ou restar o banco
+        System.out.println("After");
+    }
+
+    @AfterClass // Após a classe
+    public static void afterClass() {
+        System.out.println("After Class");
+    }
+
     @Test
     public void deveLigarUmCarroDesligado() {
+        System.out.println("deveLigarUmCarroDesligado");
         // Gherkin
 
         // Given - Dado
-        CarroService carroService = new CarroService();
         Carro carro = new Carro();
 
         // When - Quando
@@ -22,8 +51,8 @@ public class CarroServiceTest {
 
     @Test
     public void deveDesligarUmCarroLigado() {
+        System.out.println("deveDesligarUmCarroLigado");
         // Given
-        CarroService carroService = new CarroService();
         Carro carro = new Carro();
         carroService.ligar(carro);
 
@@ -36,8 +65,8 @@ public class CarroServiceTest {
 
     @Test
     public void deveAcelerarUmCarroLigado() {
+        System.out.println("deveAcelerarUmCarroLigado");
         // Given
-        CarroService carroService = new CarroService();
         Carro carro = new Carro();
         carroService.ligar(carro);
 
@@ -51,8 +80,8 @@ public class CarroServiceTest {
 
     @Test
     public void deveFrearUmCarroLigadoEEmMovimento() {
+        System.out.println("deveFrearUmCarroLigadoEEmMovimento");
         // Given
-        CarroService carroService = new CarroService();
         Carro carro = new Carro();
         carroService.ligar(carro);
         carroService.acelerar(carro, 20);
